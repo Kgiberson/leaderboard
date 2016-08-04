@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { MorningEntries } from '../api/morning_entries.js';
 import { EveningEntries } from '../api/evening_entries.js';
 
+import './entry.js';
 import './body.html';
 
 Template.body.events({
@@ -23,10 +24,10 @@ Template.body.events({
 
 		target.text.value = '';
 	}
-})
+});
 
-// Template.body.helpers({
-// 	entries() {
-// 		return Entries.find({});
-// 	}
-// })
+Template.body.helpers({
+	morningEntries() {
+		return MorningEntries.find({}, { sort: { createdAt: -1 } });
+	}
+});

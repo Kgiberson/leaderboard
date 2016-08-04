@@ -14,9 +14,12 @@
 		</label>
 		<input type="submit" value="Done" />
 	</form>
+
+	<ul>
+		{{#each morning_entries}}
+			{{> entry}}
+		{{/each}}
+	</ul>
 </div>
 </body>
 
-<template name="entry">
-	<li> {{morning_entries.createdAt}}</li>
-</template>
