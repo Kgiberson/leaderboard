@@ -1,0 +1,22 @@
+<body>
+<div class="container">
+	<header>
+  	<h1>The Five Minute Journal</h1>
+  </header>
+  	<div>{{> atForm}}</div>
+  	<div>{{>atNavButton}}</div>
+
+	<form class="new-morning-entry">
+		<label class="gratitude">I'm grateful for...
+			<input type="text" name="first"/>
+			<input type="text" name="second"/>
+			<input type="text" name="third"/>
+		</label>
+		<input type="submit" value="Done" />
+	</form>
+</div>
+</body>
+
+<template name="entry">
+	<li> {{morning_entries.createdAt}}</li>
+</template>
