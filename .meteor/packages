@@ -18,7 +18,7 @@ es5-shim@4.6.13                # ECMAScript 5 compatibility for older browsers.
 ecmascript@0.5.7              # Enable ECMAScript2015+ syntax in app code
 
 kadira:flow-router
-accounts-password
+accounts-password@1.2.12
 fourseven:scss
 materialize:materialize@0.97.7
 useraccounts:materialize
