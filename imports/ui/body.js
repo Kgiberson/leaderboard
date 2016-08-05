@@ -11,18 +11,15 @@ Template.body.events({
 		event.preventDefault();
 
 		const target = event.target;
+		const firstVar = target.first.value;
+		const secondVar = target.second.value;
+		const thirdVar = target.third.value;
 
+		Meteor.call('morningEntries.insert', firstVar, secondVar, thirdVar );
 
-		MorningEntries.insert({
-			createdAt: new Date(),
-			gratefulFor: {
-				first: target.first.value,
-				second: target.second.value,
-				third: target.third.value
-			}
-		});
-
-		target.text.value = '';
+		target.first.value = '';
+		target.second.value = '';
+		target.third.value = '';
 	}
 });
 
