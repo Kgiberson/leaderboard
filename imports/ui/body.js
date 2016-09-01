@@ -28,3 +28,11 @@ Template.body.helpers({
 		return MorningEntries.find({}, { sort: { createdAt: -1 } });
 	}
 });
+
+if(Meteor.isClient){
+	Template.body.events({
+		'mouseover .done': function(){
+			console.log("mousing over");
+		}
+	})
+}
