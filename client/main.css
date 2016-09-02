@@ -1,7 +1,43 @@
 /* CSS declarations go here */
 
+body {
+	font-family: "Helvetica Neue";
+}
 
+label#label-1 {
+	font-size: 2rem;
+	text-align: center;
+	font-family: 'Reenie Beanie', cursive;
+}
+
+label#label-2 {
+	font-size: 2rem;
+	text-align: center;
+	font-family: 'Reenie Beanie', cursive;
+}
+
+label#label-3 {
+	font-size: 2rem;
+	text-align: center;
+	font-family: 'Reenie Beanie', cursive;
+}
 
 .gratitude {
 	display: block;
 }
+
+h1 {
+	text-align: center;
+}
+
+form .row {
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+
+.input-field {
+	/*margin-top: 0px;*/
+	/*margin-bottom: 0px;*/
+}
+

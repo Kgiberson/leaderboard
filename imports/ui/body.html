@@ -1,25 +1,79 @@
 <body>
-<div class="container">
-	<header>
-  	<h1>The Five Minute Journal</h1>
-  </header>
-  	<div>{{> atForm}}</div>
-  	<div>{{>atNavButton}}</div>
 
-	<form class="new-morning-entry">
-		<label class="gratitude">I'm grateful for...
-			<input type="text" name="first"/>
-			<input type="text" name="second"/>
-			<input type="text" name="third"/>
-		</label>
-		<input type="submit" value="Done" />
-	</form>
+	<div class="container">
+	  <header>
+	  	<h1>The Five Minute Journal</h1>
 
-	<ul>
-		{{#each morning_entries}}
-			{{> entry}}
-		{{/each}}
-	</ul>
-</div>
+	  </header>
+
+	  	<!-- materialize template -->
+	 	<div >{{> atForm}}</div>
+		{{#if currentUser}}
+		<!-- <div>{{>atNavButton}}</div> -->
+		<br>
+		<div class="row">
+			<form class="new-morning-entry col s12">
+
+				<div class="row">
+					<div class="input-field">
+						<input type="text" id="first_gratitude" class="validate" placeholder="1" />
+						<label class="active" id="label-1" for="first_gratitude">I am grateful for...</label>
+					</div>
+				<!-- </div> -->
+
+				<!-- <div class="row"> -->
+					<div class="input-field">
+						<input type="text" id="second_gratitude" placeholder="2"/>
+					</div>
+				<!-- </div> -->
+
+				<!-- <div class="row"> -->
+					<div class="input-field">
+						<input type="text" id="third_gratitude" placeholder="3"/>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field">
+						<input type="text" id="first_great" class="validate" placeholder="1" />
+						<label class="active" id="label-2" for="first_great">What would make today great?</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field">
+						<input type="text" id="second_great" placeholder="2"/>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field">
+						<input type="text" id="third_great" placeholder="3"/>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field">
+						<textarea type="text" id="affirmation" class="materialize-textarea"></textarea>
+						<label class="active" id="label-3" for="affirmation">Daily affirmation. I am...</label>
+
+					</div>
+				</div>
+
+				<div class="row">
+						<button class="btn waves-effect waves-light" type="submit" name="action">Save
+							<i class="fa fa-pencil right" aria-hidden="true"></i>
+						</button>
+				</div>
+			</form>
+		</div>
+
+		<ul>
+			{{#each morningEntries}}
+				{{> entry}}
+			{{/each}}
+		</ul>
+		{{/if}}
+	</div>
 </body>
 
