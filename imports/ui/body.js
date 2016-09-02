@@ -6,33 +6,31 @@ import { EveningEntries } from '../api/evening_entries.js';
 import './entry.js';
 import './body.html';
 
-Template.body.events({
-	'submit .new-morning-entry'(event) {
-		event.preventDefault();
+if(Meteor.isClient){
+	Template.body.events({
+		'submit .new-morning-entry'(event) {
+			event.preventDefault();
 
-		const target = event.target;
-		const firstVar = target.first.value;
-		const secondVar = target.second.value;
-		const thirdVar = target.third.value;
+			const target = event.target;
+			const firstVar = target.first.value;
+			const secondVar = target.second.value;
+			const thirdVar = target.third.value;
+			console.log(firstVar);
 
-		Meteor.call('morningEntries.insert', firstVar, secondVar, thirdVar );
+			Meteor.call('insertMorningEntries', firstVar, secondVar, thirdVar );
 
-		target.first.value = '';
-		target.second.value = '';
-		target.third.value = '';
-	}
-});
+			target.first.value = '';
+			target.second.value = '';
+			target.third.value = '';
+		},
+		'mouseover .done': function(){
+			console.log("mousing over");
+		}
+	});
+}
 
 Template.body.helpers({
 	morningEntries() {
 		return MorningEntries.find({}, { sort: { createdAt: -1 } });
 	}
 });
-
-if(Meteor.isClient){
-	Template.body.events({
-		'mouseover .done': function(){
-			console.log("mousing over");
-		}
-	})
-}

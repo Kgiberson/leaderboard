@@ -5,7 +5,7 @@ import { check } from 'meteor/check';
 export const MorningEntries = new Mongo.Collection('morning_entries');
 
 Meteor.methods({
-	'morningEntries.insert'(firstVar, secondVar, thirdVar) {
+	insertMorningEntries(firstVar) {
 	// 	check(text, String);
 
 		if (! this.userId) {
@@ -13,14 +13,18 @@ Meteor.methods({
 		}
 
 		MorningEntries.insert({
+			// is .userId right or _id
 			author: this.userId,
 			createdAt: new Date(),
-			gratefulFor: {
-				first: firstVar,
-				second: secondVar,
-				third: thirdVar
-			}
+			first: firstVar,
+			// second: firstVar[1]
+			// gratefulFor: {
+			// 	first: firstVar,
+			// 	second: secondVar,
+			// 	third: thirdVar
+			// }
 		});
 	}
 })
+
 

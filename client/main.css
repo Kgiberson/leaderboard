@@ -1,6 +1,13 @@
 /* CSS declarations go here */
 
+body {
+	font-family: "Helvetica Neue";
+}
 
+label {
+	font-size: 10px;
+	text-align: center;
+}
 
 .gratitude {
 	display: block;
